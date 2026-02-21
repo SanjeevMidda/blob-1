@@ -9,6 +9,8 @@ function App() {
   // DONE create function to change blob's corners
   // create interval between each transition
 
+  const randomCornerValue = () => `${Math.floor(Math.random() * 100)}`;
+
   const [corners, setCorners] = useState({
     topLeft: "10",
     topRight: "10",
@@ -18,10 +20,10 @@ function App() {
 
   const changeBlob = () =>
     setCorners({
-      topLeft: `${Math.floor(Math.random() * 100)}`,
-      topRight: `${Math.floor(Math.random() * 100)}`,
-      bottomRight: `${Math.floor(Math.random() * 100)}`,
-      bottomLeft: `${Math.floor(Math.random() * 100)}`,
+      topLeft: randomCornerValue(),
+      topRight: randomCornerValue(),
+      bottomRight: randomCornerValue(),
+      bottomLeft: randomCornerValue(),
     });
 
   useEffect(() => {
