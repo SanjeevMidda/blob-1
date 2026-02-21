@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./index.css";
 
 function App() {
@@ -6,7 +6,7 @@ function App() {
 
   // DONE create blob
   // DONE create state to hold dynamic values for blob
-  // create function to change blob's corners
+  // DONE create function to change blob's corners
   // create interval between each transition
 
   const [corners, setCorners] = useState({
@@ -18,13 +18,14 @@ function App() {
 
   const changeBlob = () =>
     setCorners({
-      TLCorner: "50px",
-      TRCorner: "50px",
-      BRCorner: "50px",
-      BLCorner: "50px",
+      TLCorner: `${Math.floor(Math.random() * 900)}px`,
+      TRCorner: `${Math.floor(Math.random() * 900)}px`,
+      BRCorner: `${Math.floor(Math.random() * 900)}px`,
+      BLCorner: `${Math.floor(Math.random() * 900)}px`,
     });
 
-  console.log(corners);
+  useEffect(() => {}, [setInterval(changeBlob, 200)]);
+
   return (
     <div className="App">
       <div
