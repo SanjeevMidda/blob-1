@@ -11,3 +11,9 @@
   align-items: center;
   height: 100dvh;
 }
+
+.blob {
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(purple, silver);
+}
