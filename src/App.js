@@ -34,7 +34,14 @@ function App() {
         style={{
           borderRadius: `${corners.TLCorner} ${corners.TRCorner} ${corners.BRCorner} ${corners.BLCorner}`,
         }}
-      ></div>
+      >
+        <div
+          className="innerBlob"
+          style={{
+            borderRadius: `${corners.TLCorner} ${corners.TRCorner} ${corners.BRCorner} ${corners.BLCorner}`,
+          }}
+        ></div>
+      </div>
     </div>
   );
 }
