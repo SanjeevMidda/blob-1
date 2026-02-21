@@ -3,6 +3,7 @@
   font-family: Helvetica, sans-serif;
   font-weight: 300;
   box-sizing: border-box;
+  transition: border-radius 150ms ease-in-out;
 }
 
 .App {
@@ -15,5 +16,15 @@
 .blob {
   width: 200px;
   height: 200px;
-  background: linear-gradient(purple, silver);
+  background: linear-gradient(orange, pink);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.innerBlob {
+  width: 50px;
+  height: 50px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
 }
