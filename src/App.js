@@ -18,30 +18,28 @@ function App() {
 
   const changeBlob = () =>
     setCorners({
-      TLCorner: `${Math.floor(Math.random() * 900)}px`,
-      TRCorner: `${Math.floor(Math.random() * 900)}px`,
-      BRCorner: `${Math.floor(Math.random() * 900)}px`,
-      BLCorner: `${Math.floor(Math.random() * 900)}px`,
+      topLeft: `${Math.floor(Math.random() * 100)}%`,
+      topRight: `${Math.floor(Math.random() * 100)}%`,
+      bottomRight: `${Math.floor(Math.random() * 100)}%`,
+      bottomLeft: `${Math.floor(Math.random() * 100)}%`,
     });
 
-  useEffect(() => {}, [setInterval(changeBlob, 200)]);
+  useEffect(() => {
+    const startBlob = setInterval(changeBlob, 250);
+
+    return () => clearInterval(startBlob);
+  }, []);
 
   return (
     <div className="App">
+      <h1>bio.</h1>
       <div
         className="blob"
         onClick={changeBlob}
         style={{
-          borderRadius: `${corners.TLCorner} ${corners.TRCorner} ${corners.BRCorner} ${corners.BLCorner}`,
+          borderRadius: `${corners.topLeft} ${corners.topRight} ${corners.bottomRight} ${corners.bottomLeft}`,
         }}
-      >
-        <div
-          className="innerBlob"
-          style={{
-            borderRadius: `${corners.TLCorner} ${corners.TRCorner} ${corners.BRCorner} ${corners.BLCorner}`,
-          }}
-        ></div>
-      </div>
+      ></div>
     </div>
   );
 }
