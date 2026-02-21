@@ -12,10 +12,10 @@ function App() {
   const randomCornerValue = () => `${Math.floor(Math.random() * 100)}`;
 
   const [corners, setCorners] = useState({
-    topLeft: "10",
-    topRight: "10",
-    bottomRight: "10",
-    bottomLeft: "10",
+    topLeft: 10,
+    topRight: 10,
+    bottomRight: 10,
+    bottomLeft: 10,
   });
 
   const changeBlob = () =>
@@ -27,7 +27,7 @@ function App() {
     });
 
   useEffect(() => {
-    const startBlob = setInterval(changeBlob, 250);
+    const startBlob = setInterval(changeBlob, 300);
 
     return () => clearInterval(startBlob);
   }, []);
