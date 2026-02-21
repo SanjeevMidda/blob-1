@@ -10,18 +10,18 @@ function App() {
   // create interval between each transition
 
   const [corners, setCorners] = useState({
-    TLCorner: "10px",
-    TRCorner: "10px",
-    BRCorner: "10px",
-    BLCorner: "10px",
+    topLeft: "10",
+    topRight: "10",
+    bottomRight: "10",
+    bottomLeft: "10",
   });
 
   const changeBlob = () =>
     setCorners({
-      topLeft: `${Math.floor(Math.random() * 100)}%`,
-      topRight: `${Math.floor(Math.random() * 100)}%`,
-      bottomRight: `${Math.floor(Math.random() * 100)}%`,
-      bottomLeft: `${Math.floor(Math.random() * 100)}%`,
+      topLeft: `${Math.floor(Math.random() * 100)}`,
+      topRight: `${Math.floor(Math.random() * 100)}`,
+      bottomRight: `${Math.floor(Math.random() * 100)}`,
+      bottomLeft: `${Math.floor(Math.random() * 100)}`,
     });
 
   useEffect(() => {
@@ -37,7 +37,7 @@ function App() {
         className="blob"
         onClick={changeBlob}
         style={{
-          borderRadius: `${corners.topLeft} ${corners.topRight} ${corners.bottomRight} ${corners.bottomLeft}`,
+          borderRadius: `${corners.topLeft}% ${corners.topRight}% ${corners.bottomRight}% ${corners.bottomLeft}%`,
         }}
       ></div>
     </div>
